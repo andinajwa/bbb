@@ -1,0 +1,386 @@
+<html lang="id">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Sistem Pakar Diagnosa Penyakit Ikan
+  </title>
+  <script src="https://cdn.tailwindcss.com">
+  </script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <style>
+   body {
+            font-family: 'Arial', sans-serif;
+        }
+  </style>
+ </head>
+ <body class="bg-gray-100">
+  <div class="container mx-auto p-4 bg-white shadow-lg rounded-lg mt-10" id="dashboard">
+   <div class="text-center">
+    <h1 class="text-3xl font-bold text-gray-800">
+     Sistem Pakar Diagnosa Penyakit Ikan
+    </h1>
+    <img alt="Background image of Nile Tilapia fish in a pond" class="w-full h-48 object-cover mt-4 rounded-lg" height="200" src="https://storage.googleapis.com/a1aa/image/Ajo2d5rXe2UdOqtx2UAIxflMrVnaDffklBV4OE3eeY1ulbEfJA.jpg" width="800"/>
+    <div class="mt-6">
+     <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="showDiagnosisPage()">
+      Mulai Diagnosa
+     </button>
+    </div>
+   </div>
+  </div>
+  <div class="container mx-auto p-4 bg-white shadow-lg rounded-lg mt-10 hidden relative" id="diagnosis">
+   <div class="text-center">
+    <h1 class="text-3xl font-bold text-gray-800">
+     Sistem Pakar Diagnosa Penyakit Ikan
+    </h1>
+    <img alt="Background image of Nile Tilapia fish in a pond" class="w-full h-48 object-cover mt-4 rounded-lg" height="200" src="https://storage.googleapis.com/a1aa/image/Ajo2d5rXe2UdOqtx2UAIxflMrVnaDffklBV4OE3eeY1ulbEfJA.jpg" width="800"/>
+    <h2 class="text-xl font-semibold text-gray-700 mt-6">
+     Daftar Gejala:
+    </h2>
+   </div>
+   <ul class="gejala-list grid grid-cols-1 md:grid-cols-2 gap-4 mt-4">
+    <li>
+     <input class="mr-2" id="G1" type="checkbox"/>
+     <label for="G1">
+      <span class="font-bold">
+       G1:
+      </span>
+      Ikan mengapung di permukaan air
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G2" type="checkbox"/>
+     <label for="G2">
+      <span class="font-bold">
+       G2:
+      </span>
+      Ikan malas berenang
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G3" type="checkbox"/>
+     <label for="G3">
+      <span class="font-bold">
+       G3:
+      </span>
+      Insang berwarna kemerahan
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G4" type="checkbox"/>
+     <label for="G4">
+      <span class="font-bold">
+       G4:
+      </span>
+      Bercak putih pada tubuh
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G5" type="checkbox"/>
+     <label for="G5">
+      <span class="font-bold">
+       G5:
+      </span>
+      Insang membusuk dan menghitam
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G6" type="checkbox"/>
+     <label for="G6">
+      <span class="font-bold">
+       G6:
+      </span>
+      Nafsu makan menurun
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G7" type="checkbox"/>
+     <label for="G7">
+      <span class="font-bold">
+       G7:
+      </span>
+      Ikan menggosokkan badan ke benda keras
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G8" type="checkbox"/>
+     <label for="G8">
+      <span class="font-bold">
+       G8:
+      </span>
+      Tubuh ikan pucat dan berlendir
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G9" type="checkbox"/>
+     <label for="G9">
+      <span class="font-bold">
+       G9:
+      </span>
+      Warna tubuh gelap
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G10" type="checkbox"/>
+     <label for="G10">
+      <span class="font-bold">
+       G10:
+      </span>
+      Pertumbuhan ikan lambat
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G11" type="checkbox"/>
+     <label for="G11">
+      <span class="font-bold">
+       G11:
+      </span>
+      Sirip ikan sobek
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G12" type="checkbox"/>
+     <label for="G12">
+      <span class="font-bold">
+       G12:
+      </span>
+      Pendarahan pada insang
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G13" type="checkbox"/>
+     <label for="G13">
+      <span class="font-bold">
+       G13:
+      </span>
+      Mata ikan menonjol
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G14" type="checkbox"/>
+     <label for="G14">
+      <span class="font-bold">
+       G14:
+      </span>
+      Perut ikan bengkak
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G15" type="checkbox"/>
+     <label for="G15">
+      <span class="font-bold">
+       G15:
+      </span>
+      Ikan mengalami kejang
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G16" type="checkbox"/>
+     <label for="G16">
+      <span class="font-bold">
+       G16:
+      </span>
+      Sirip membusuk
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G17" type="checkbox"/>
+     <label for="G17">
+      <span class="font-bold">
+       G17:
+      </span>
+      Ikan bernafas dengan cepat
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G18" type="checkbox"/>
+     <label for="G18">
+      <span class="font-bold">
+       G18:
+      </span>
+      Ikan terlihat lesu
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G19" type="checkbox"/>
+     <label for="G19">
+      <span class="font-bold">
+       G19:
+      </span>
+      Badan ikan bengkok
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G20" type="checkbox"/>
+     <label for="G20">
+      <span class="font-bold">
+       G20:
+      </span>
+      Luka terbuka pada tubuh
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G21" type="checkbox"/>
+     <label for="G21">
+      <span class="font-bold">
+       G21:
+      </span>
+      Parasit menempel pada kulit ikan
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G22" type="checkbox"/>
+     <label for="G22">
+      <span class="font-bold">
+       G22:
+      </span>
+      Ikan mengalami gangguan keseimbangan
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G23" type="checkbox"/>
+     <label for="G23">
+      <span class="font-bold">
+       G23:
+      </span>
+      Ikan sering melompat dari air
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G24" type="checkbox"/>
+     <label for="G24">
+      <span class="font-bold">
+       G24:
+      </span>
+      Sirip menggumpal
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G25" type="checkbox"/>
+     <label for="G25">
+      <span class="font-bold">
+       G25:
+      </span>
+      Ikan tidak merespon rangsangan
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G26" type="checkbox"/>
+     <label for="G26">
+      <span class="font-bold">
+       G26:
+      </span>
+      Ikan kehilangan keseimbangan saat berenang
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G27" type="checkbox"/>
+     <label for="G27">
+      <span class="font-bold">
+       G27:
+      </span>
+      Kotoran ikan tidak normal
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G28" type="checkbox"/>
+     <label for="G28">
+      <span class="font-bold">
+       G28:
+      </span>
+      Ikan berdiam di dasar kolam
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G29" type="checkbox"/>
+     <label for="G29">
+      <span class="font-bold">
+       G29:
+      </span>
+      Muncul lendir berlebihan di insang
+     </label>
+    </li>
+    <li>
+     <input class="mr-2" id="G30" type="checkbox"/>
+     <label for="G30">
+      <span class="font-bold">
+       G30:
+      </span>
+      Kulit ikan mengelupas
+     </label>
+    </li>
+   </ul>
+   <div class="submit-button text-center mt-6">
+    <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="diagnosaPenyakit()">
+     Diagnosa
+    </button>
+   </div>
+   <div class="result mt-6 p-4 bg-green-100 border border-green-400 rounded-lg text-green-700 hidden" id="result">
+   </div>
+   <div class="error mt-6 p-4 bg-red-100 border border-red-400 rounded-lg text-red-700 hidden" id="error">
+   </div>
+  </div>
+  <div class="fixed inset-0 bg-gray-800 bg-opacity-75 flex items-center justify-center hidden" id="popup">
+   <div class="bg-white p-6 rounded-lg shadow-lg max-w-lg w-full">
+    <h2 class="text-2xl font-bold mb-4">
+     Hasil Diagnosa
+    </h2>
+    <div id="popup-content">
+    </div>
+    <div class="mt-6 text-center">
+     <button class="bg-blue-500 text-white px-4 py-2 rounded-lg hover:bg-blue-700" onclick="closePopup()">
+      Tutup
+     </button>
+    </div>
+   </div>
+  </div>
+  <script>
+   function showDiagnosisPage() {
+            document.getElementById('dashboard').classList.add('hidden');
+            document.getElementById('diagnosis').classList.remove('hidden');
+        }
+
+        function diagnosaPenyakit() {
+            const gejala = [];
+            for (let i = 1; i <= 30; i++) {
+                const checkbox = document.getElementById('G' + i);
+                if (checkbox.checked) {
+                    gejala.push('G' + i);
+                }
+            }
+
+            const errorDiv = document.getElementById('error');
+            const resultDiv = document.getElementById('result');
+            const popup = document.getElementById('popup');
+            const popupContent = document.getElementById('popup-content');
+            errorDiv.style.display = 'none';
+            resultDiv.style.display = 'none';
+            popup.classList.add('hidden');
+
+            if (gejala.length === 0) {
+                errorDiv.innerText = 'Silakan pilih setidaknya satu gejala.';
+                errorDiv.style.display = 'block';
+                return;
+            }
+
+            // Menampilkan hasil diagnosa sederhana (logika forward chaining belum diterapkan di sini)
+            let penyakit = 'Tidak dapat menentukan penyakit berdasarkan gejala yang dipilih.';
+            let informasi = '';
+            if (gejala.includes('G1') && gejala.includes('G2')) {
+                penyakit = 'Penyakit: Aeromonas hydrophila';
+                informasi = 'Aeromonas hydrophila adalah bakteri yang menyebabkan penyakit pada ikan, terutama pada ikan air tawar. Gejala yang umum termasuk ikan mengapung di permukaan air dan malas berenang.';
+            } else if (gejala.includes('G3') && gejala.includes('G4')) {
+                penyakit = 'Penyakit: Ichthyophthirius multifiliis (White Spot Disease)';
+                informasi = 'Ichthyophthirius multifiliis, juga dikenal sebagai penyakit bintik putih, adalah penyakit parasit yang umum pada ikan. Gejala termasuk insang berwarna kemerahan dan bercak putih pada tubuh ikan.';
+            }
+
+            popupContent.innerHTML = `<strong>Gejala yang dimasukkan:</strong> ${gejala.join(', ')}<br><strong>${penyakit}</strong><br>${informasi}`;
+            popup.classList.remove('hidden');
+        }
+
+        function closePopup() {
+            document.getElementById('popup').classList.add('hidden');
+        }
+  </script>
+ </body>
+</html>
